@@ -20,6 +20,7 @@ public class CardHandler : MonoBehaviour
     [SerializeField]
     MatchHandler matchHandler;
     bool gameCompleted = false;
+    [SerializeField] AudioClip winClip;
 
     public List<GameObject> CardObjects { get { return cards; } }
 
@@ -31,7 +32,7 @@ public class CardHandler : MonoBehaviour
 
     public void AddToMatch(CardBehaviourScript cardBehaviourScript)
     {
-      bool match=  matchHandler.AddCard(cardBehaviourScript);
+        bool match = matchHandler.AddCard(cardBehaviourScript);
         if (match)
         {
             completedPairs++;
@@ -50,8 +51,9 @@ public class CardHandler : MonoBehaviour
             if(endScreenTimer < Time.time)
             {
                 Debug.Log("you win");
+                SoundManager.instance.PlaySfx(winClip);
+                gameCompleted = false;
             }
         }
     }
-
 }
