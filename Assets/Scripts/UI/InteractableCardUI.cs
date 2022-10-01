@@ -28,7 +28,9 @@ namespace LDJAM51.UI
         bool isFacingUp = false;
 
         public bool IsFacingUp { get { return isFacingUp; } }
-        
+        public bool IsFlipping { get { return isFlipping; } }
+        CardBehaviourScript cardBehaviourScript;
+
         private void Start()
         {
             element = transform.GetChild(0);

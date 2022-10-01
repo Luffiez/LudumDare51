@@ -10,7 +10,7 @@ public class CardHandler : MonoBehaviour
     int numberOfPairs;
     int completedPairs = 0;
     [SerializeField]
-    float endScreenTime =2f;
+    float endScreenTime = 2f;
     float endScreenTimer;
 
     [SerializeField]
@@ -20,19 +20,18 @@ public class CardHandler : MonoBehaviour
     List<Sprite> CardSprites;
     [SerializeField]
     MatchHandler matchHandler;
-    List<GameObject> cardObjects = new List<GameObject>();
     bool gameCompleted = false;
     [SerializeField] LevelCompleteScreen winScreen;
    
 
     int flips = 0;
 
-    public List<GameObject> CardObjects { get { return cardObjects; } } 
-         
+    public List<GameObject> CardObjects { get { return cards; } }
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        cards = cardSpawner.SpawnCards(numberOfPairs, CardSprites,this);
+        cards = cardSpawner.SpawnCards(numberOfPairs, CardSprites, this);
     }
 
     public void AddToMatch(CardBehaviourScript cardBehaviourScript)

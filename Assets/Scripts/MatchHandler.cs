@@ -50,8 +50,6 @@ public class MatchHandler : MonoBehaviour
             }
             else
             {
-                card2.Selected = false;
-                card1.Selected = false;
                 clearCards = true;
                 clearTimer = Time.time + clearTime;
                 SoundManager.instance.PlaySfx(wrongClip, 0.7f);
@@ -73,8 +71,10 @@ public class MatchHandler : MonoBehaviour
             }
             else
             {
-                if (!card1.GetComponent<InteractableCardUI>().IsFacingUp && !card2.GetComponent<InteractableCardUI>().IsFacingUp)
+                if (!card1.GetComponent<InteractableCardUI>().IsFacingUp && !card1.GetComponent<InteractableCardUI>().IsFlipping && !card2.GetComponent<InteractableCardUI>().IsFacingUp && !card2.GetComponent<InteractableCardUI>().IsFlipping)
                 {
+                    card2.Selected = false;
+                    card1.Selected = false;
                     card1 = null;
                     card2 = null;
                     clearCards = false;
