@@ -17,7 +17,7 @@ public class CardSpawner : MonoBehaviour
     GameObject canvas;
    
 
-    public List<GameObject> SpawnCards(int numberOfPairs, List<Sprite> cardSprites)
+    public List<GameObject> SpawnCards(int numberOfPairs, List<Sprite> cardSprites, CardHandler cardHandler)
     {
         List<Sprite> cardSpriteClone = new List<Sprite>(cardSprites);
         List<GameObject> cardObjects = new List<GameObject>();
@@ -28,6 +28,10 @@ public class CardSpawner : MonoBehaviour
             GameObject card2 = Instantiate(CardObjectPrefab, null);
             cardObjects.Add(card2);
             cardObjects.Add(card1);
+            card1.GetComponent<CardBehaviourScript>().PairId = i;
+            card2.GetComponent<CardBehaviourScript>().PairId = i;
+            card2.GetComponent<CardBehaviourScript>().SetCardHandler(cardHandler);
+            card1.GetComponent<CardBehaviourScript>().SetCardHandler(cardHandler);
             card1.GetComponent<InteractableCardUI>().SetSprite(cardSpriteClone[randomListIndex]);
             card2.GetComponent<InteractableCardUI>().SetSprite(cardSpriteClone[randomListIndex]);
             cardSpriteClone.RemoveAt(randomListIndex);
