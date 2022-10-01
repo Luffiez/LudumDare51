@@ -71,7 +71,7 @@ namespace LDJAM51.UI
         IEnumerator FlipUp()
         {
             isFlipping = true;
-            float currentX = element.rotation.x;
+            float currentX = element.localRotation.x;
             float targetX = 180;
             float newScale = hoverScale * 1.1f;
 
@@ -80,7 +80,7 @@ namespace LDJAM51.UI
             while (currentX + 1 <= targetX)
             {
                 currentX = Mathf.Lerp(currentX, targetX, Time.deltaTime * flipSpeed);
-                element.rotation = Quaternion.Euler(currentX, 0, 0);
+                element.localRotation = Quaternion.Euler(currentX, 0, 0);
 
                 if (!isFacingUp && currentX > 90)
                 {
@@ -98,7 +98,7 @@ namespace LDJAM51.UI
                 yield return new WaitForEndOfFrame();
             }
 
-            element.rotation = Quaternion.Euler(0, 0, 0);
+            element.localRotation = Quaternion.Euler(0, 0, 0);
             iconImage.transform.localScale = new Vector3(1, 1, 1);
             backgroundImage.transform.localScale = new Vector3(1, 1, 1);
             element.localScale = new Vector3(element.localScale.x, -element.localScale.y, element.localScale.z);
@@ -117,12 +117,12 @@ namespace LDJAM51.UI
             float currentX = 180;
             iconImage.transform.localScale = new Vector3(1, -1, 1);
 
-            element.rotation = Quaternion.Euler(currentX, 0, 0);
+            element.localRotation = Quaternion.Euler(currentX, 0, 0);
 
             while (currentX - 1 >= targetX)
             {
                 currentX = Mathf.Lerp(currentX, targetX, Time.deltaTime * flipSpeed * 1.5f);
-                element.rotation = Quaternion.Euler(currentX, 0, 0);
+                element.localRotation = Quaternion.Euler(currentX, 0, 0);
 
                 if (isFacingUp && currentX < 90)
                 {
@@ -139,7 +139,7 @@ namespace LDJAM51.UI
             backgroundImage.transform.localScale = new Vector3(1, 1, 1);
 
             scaler.SetTargetScale(1, hoverSpeed * hoverMultiplier);
-            element.rotation = Quaternion.Euler(0, 0, 0);
+            element.localRotation = Quaternion.Euler(0, 0, 0);
             scaler.SetTargetScale(1, 5);
             isFlipping = false;
         }
