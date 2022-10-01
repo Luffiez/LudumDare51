@@ -1295,9 +1295,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardHandler: {fileID: 555788302}
-  NumberOfCards: 2
+  NumberOfCards: 5
   OffScreenTransform: {fileID: 1835041137}
-  LerpTime: 3
+  LerpTime: 0.96
 --- !u!114 &555788306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1312,6 +1312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Effects:
   - {fileID: 555788305}
+  effectTime: 5
 --- !u!1 &618921516
 GameObject:
   m_ObjectHideFlags: 0
