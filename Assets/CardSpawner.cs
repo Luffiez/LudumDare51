@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using LDJAM51.UI;
-
+using UnityEngine.UI;
 
 public class CardSpawner : MonoBehaviour
 {
@@ -13,6 +13,8 @@ public class CardSpawner : MonoBehaviour
     GameObject GridLayoutObject;
     [SerializeField]
     GameObject UiCardPositionPrefab;
+    [SerializeField]
+    GameObject canvas;
    
 
     public List<GameObject> SpawnCards(int numberOfPairs, List<Sprite> cardSprites)
@@ -37,8 +39,10 @@ public class CardSpawner : MonoBehaviour
           int randomListIndex = Random.Range(0, tempCardList.Count);
           tempCardList[randomListIndex].transform.parent = cardPositionObject.transform;
           tempCardList[randomListIndex].GetComponent<RectTransform>().localPosition = Vector3.zero;
+          tempCardList[randomListIndex].GetComponent<RectTransform>().localScale = new Vector3(1,1,1);
           tempCardList.RemoveAt(randomListIndex);
         }
+        LayoutRebuilder.ForceRebuildLayoutImmediate(canvas.GetComponent<RectTransform>()); 
         return cardObjects;
     }
 
