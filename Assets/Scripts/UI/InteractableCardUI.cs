@@ -16,8 +16,8 @@ namespace LDJAM51.UI
         [SerializeField] float flipSpeed;
         [SerializeField] float hoverMultiplier = 2f;
         [SerializeField] Image cardImage;
-        [SerializeField] Sprite upSprite;
 
+        Sprite upSprite;
         Transform element;
         bool isFlipping = false;
         bool isFacingUp = false;
@@ -46,6 +46,11 @@ namespace LDJAM51.UI
                 return;
 
             scaler.SetTargetScale(1, hoverSpeed);
+        }
+
+        public void SetSprite(Sprite sprite)
+        {
+            upSprite = sprite;
         }
 
         public void FlipCard()
