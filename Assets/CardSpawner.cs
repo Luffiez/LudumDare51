@@ -1,30 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using LDJAM51.UI;
 
 
 public class CardSpawner : MonoBehaviour
 {
   
     [SerializeField]
-    List<GameObject> CardObjectPrefabs;
+    GameObject CardObjectPrefab;
     [SerializeField]
     GameObject GridLayoutObject;
     [SerializeField]
     GameObject UiCardPositionPrefab;
    
 
-    public List<GameObject> SpawnCards(int numberOfPairs)
+    public List<GameObject> SpawnCards(int numberOfPairs, List<Sprite> cardSprites)
     {
+        List<Sprite> cardSpriteClone = new List<Sprite>(cardSprites);
         List<GameObject> cardObjects = new List<GameObject>();
         for (int i = 0; i < numberOfPairs; i++)
         {
-            int randomListIndex = Random.Range(0, CardObjectPrefabs.Count);
-            GameObject card1 =   Instantiate( CardObjectPrefabs[randomListIndex],null);
-            GameObject card2 = Instantiate(CardObjectPrefabs[randomListIndex], null);
+            int randomListIndex = Random.Range(0, cardSpriteClone.Count);
+            GameObject card1 =   Instantiate(CardObjectPrefab, null);
+            GameObject card2 = Instantiate(CardObjectPrefab, null);
             cardObjects.Add(card2);
             cardObjects.Add(card1);
-            CardObjectPrefabs.RemoveAt(randomListIndex);
+            card1.GetComponent<InteractableCardUI>().SetSprite(cardSpriteClone[randomListIndex]);
+            card2.GetComponent<InteractableCardUI>().SetSprite(cardSpriteClone[randomListIndex]);
+            cardSpriteClone.RemoveAt(randomListIndex);
         }
         List<GameObject>tempCardList = new List<GameObject>(cardObjects);
         for (int i = 0; i < numberOfPairs * 2; i++)
