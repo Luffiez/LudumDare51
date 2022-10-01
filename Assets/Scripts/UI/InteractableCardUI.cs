@@ -69,8 +69,6 @@ namespace LDJAM51.UI
             }
         }
 
-
-
         IEnumerator FlipUp()
         {
             isFlipping = true;
