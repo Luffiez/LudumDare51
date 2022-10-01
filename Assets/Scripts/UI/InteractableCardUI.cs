@@ -87,7 +87,6 @@ namespace LDJAM51.UI
                     element.localScale = new Vector3(element.localScale.x, -element.localScale.y, element.localScale.z);
                     backgroundImage.enabled = false;
                     iconImage.enabled = true;
-                    isFacingUp = true;
                     iconImage.transform.localScale = new Vector3(1, 1, 1);
 
                     yield return new WaitForSeconds(0.05f);
@@ -103,6 +102,7 @@ namespace LDJAM51.UI
             backgroundImage.transform.localScale = new Vector3(1, 1, 1);
             element.localScale = new Vector3(element.localScale.x, -element.localScale.y, element.localScale.z);
 
+            isFacingUp = true;
             isFlipping = false;
             //scaler.StopAllCoroutines();
             //scaler.SetTargetScale(hoverScale, hoverSpeed * hoverMultiplier);
@@ -130,7 +130,6 @@ namespace LDJAM51.UI
 
                     iconImage.enabled = false;
                     backgroundImage.enabled = true;
-                    isFacingUp = false;
                 }
 
                 yield return new WaitForEndOfFrame();
@@ -141,6 +140,7 @@ namespace LDJAM51.UI
             scaler.SetTargetScale(1, hoverSpeed * hoverMultiplier);
             element.localRotation = Quaternion.Euler(0, 0, 0);
             scaler.SetTargetScale(1, 5);
+            isFacingUp = false;
             isFlipping = false;
         }
     }
