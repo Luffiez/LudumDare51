@@ -23,6 +23,7 @@ public class ShuffleEffect : Effect
     {
         if (doingEffect)
             return;
+        List<GameObject> activeCardsTemps = new List<GameObject>();
         activeCards = new List<GameObject>();
         activeCardsStartPositions = new List<Vector3>();
         parentList = new List<Transform>();
@@ -32,15 +33,23 @@ public class ShuffleEffect : Effect
             CardBehaviourScript cardBehaviour =  cardObjects[i].GetComponent<CardBehaviourScript>();
             if (!cardBehaviour.Completed && !cardBehaviour.Selected)
             {
-                cardBehaviour.Selected = true;
-                activeCards.Add(cardObjects[i]);
-                activeCardsStartPositions.Add(cardObjects[i].GetComponent<RectTransform>().position);
-                parentList.Add(cardObjects[i].transform.parent);
-                LerpTimer =0;
-                if (activeCards.Count >= NumberOfCards)
-                    break;
+                activeCardsTemps.Add(cardObjects[i]);
             }
         }
+
+        for (int i = 0; i < NumberOfCards; i++)
+        {
+            if (activeCardsTemps.Count <= 0)
+                break;
+            int randomIndex = Random.Range(0, activeCardsTemps.Count);
+            activeCardsStartPositions.Add(activeCardsTemps[randomIndex].GetComponent<RectTransform>().position);
+            CardBehaviourScript cardBehaviour = activeCardsTemps[randomIndex].GetComponent<CardBehaviourScript>();
+            cardBehaviour.Selected = true;
+            activeCards.Add(activeCardsTemps[randomIndex]);
+            parentList.Add(activeCardsTemps[randomIndex].transform.parent);
+            activeCardsTemps.RemoveAt(randomIndex);
+        }
+        LerpTimer = 0;
         doingEffect = true;
     }
 
