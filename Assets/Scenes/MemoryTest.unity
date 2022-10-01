@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 58423965}
   - component: {fileID: 58423964}
   - component: {fileID: 58423963}
+  - component: {fileID: 58423966}
   m_Layer: 5
   m_Name: test2
   m_TagString: Untagged
@@ -199,6 +200,18 @@ RectTransform:
   m_AnchoredPosition: {x: 448.25674, y: 242.94855}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &58423966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58423962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2a5b5e7bf6ab8343a9b059865a39683, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &81432675
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +224,6 @@ GameObject:
   - component: {fileID: 81432679}
   - component: {fileID: 81432678}
   - component: {fileID: 81432677}
-  - component: {fileID: 81432676}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -219,30 +231,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &81432676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 81432675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa8cf1fa3ce84874396f363c6bd5c98b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numberOfPairs: 7
-  CardObjectPrefabs:
-  - {fileID: 390857025}
-  - {fileID: 58423962}
-  - {fileID: 1189794646}
-  - {fileID: 2055744265}
-  - {fileID: 574235964}
-  - {fileID: 1828628201}
-  - {fileID: 1646914084}
-  CardObjects: []
-  GridLayoutObject: {fileID: 111801444}
-  UiCardPositionPrefab: {fileID: 774031682}
 --- !u!114 &81432677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,6 +450,75 @@ RectTransform:
   m_AnchoredPosition: {x: 448.25674, y: 242.94855}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &555788300
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 555788303}
+  - component: {fileID: 555788302}
+  - component: {fileID: 555788301}
+  m_Layer: 0
+  m_Name: Handlers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &555788301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555788300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8cf1fa3ce84874396f363c6bd5c98b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardObjectPrefabs:
+  - {fileID: 390857025}
+  - {fileID: 58423962}
+  - {fileID: 1189794646}
+  - {fileID: 2055744265}
+  - {fileID: 574235964}
+  - {fileID: 1828628201}
+  - {fileID: 1646914084}
+  GridLayoutObject: {fileID: 111801444}
+  UiCardPositionPrefab: {fileID: 774031682}
+--- !u!114 &555788302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555788300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 000c05a276d4ee448bb7c29736a3f597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfPairs: 7
+  cardSpawner: {fileID: 555788301}
+--- !u!4 &555788303
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555788300}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 643.256, y: 312.36664, z: -3.8325055}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &574235964
 GameObject:
   m_ObjectHideFlags: 0

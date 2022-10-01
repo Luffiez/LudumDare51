@@ -7,6 +7,7 @@ public class CardHandler : MonoBehaviour
 
     [SerializeField]
     int numberOfPairs;
+    int completedPairs = 0;
     [SerializeField]
     CardSpawner cardSpawner;
     List<GameObject> cards = new List<GameObject>();
@@ -18,11 +19,5 @@ public class CardHandler : MonoBehaviour
     void Start()
     {
         cards = cardSpawner.SpawnCards(numberOfPairs);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
