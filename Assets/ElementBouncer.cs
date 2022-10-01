@@ -7,12 +7,13 @@ public class ElementBouncer : MonoBehaviour
     private void Start()
     {
         float startHeight = transform.localPosition.y;
-
     }
+
     public void StartBounce(float height, float speed = 1)
     {
         StartCoroutine(Bounce(height, speed));
     }
+
     public void StopBounce()
     {
         transform.localPosition = new Vector3(startHeight, startHeight, startHeight);

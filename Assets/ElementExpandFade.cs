@@ -26,7 +26,7 @@ public class ElementExpandFade : MonoBehaviour
         while (current + 0.1f < targetScale)
         {
             current = Mathf.Lerp(current, targetScale, Time.deltaTime * speed);
-            float alpha = startAlpha * (current / targetScale);
+            float alpha = startAlpha * (1 - (current / targetScale));
             image.color = new Color(image.color.r, image.color.g, image.color.b, alpha);
             transform.localScale = new Vector3(current, current, current);
             yield return new WaitForEndOfFrame();
