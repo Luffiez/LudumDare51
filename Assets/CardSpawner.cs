@@ -3,30 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class CardInitializer : MonoBehaviour
+public class CardSpawner : MonoBehaviour
 {
-    [SerializeField]
-    int numberOfPairs;
+  
     [SerializeField]
     List<GameObject> CardObjectPrefabs;
-    public List<GameObject> CardObjects = new List<GameObject>();
     [SerializeField]
     GameObject GridLayoutObject;
     [SerializeField]
     GameObject UiCardPositionPrefab;
+   
 
-    void Start()
+    public List<GameObject> SpawnCards(int numberOfPairs)
     {
+        List<GameObject> cardObjects = new List<GameObject>();
         for (int i = 0; i < numberOfPairs; i++)
         {
             int randomListIndex = Random.Range(0, CardObjectPrefabs.Count);
             GameObject card1 =   Instantiate( CardObjectPrefabs[randomListIndex],null);
             GameObject card2 = Instantiate(CardObjectPrefabs[randomListIndex], null);
-            CardObjects.Add(card2);
-            CardObjects.Add(card1);
+            cardObjects.Add(card2);
+            cardObjects.Add(card1);
             CardObjectPrefabs.RemoveAt(randomListIndex);
         }
-        List<GameObject>tempCardList = new List<GameObject>(CardObjects);
+        List<GameObject>tempCardList = new List<GameObject>(cardObjects);
         for (int i = 0; i < numberOfPairs * 2; i++)
         {
           GameObject cardPositionObject = GameObject.Instantiate(UiCardPositionPrefab, GridLayoutObject.transform);
@@ -35,11 +35,7 @@ public class CardInitializer : MonoBehaviour
           tempCardList[randomListIndex].GetComponent<RectTransform>().localPosition = Vector3.zero;
           tempCardList.RemoveAt(randomListIndex);
         }
+        return cardObjects;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
