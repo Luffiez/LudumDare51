@@ -10,7 +10,14 @@ public class CardBehaviourScript : MonoBehaviour, IPointerDownHandler
     CardHandler CardHandler;
     public bool Selected { get { return selected; } set { selected = value; } }
     public int PairId { get { return pairId; } set { pairId = value; } }
-    public bool Completed { get { return completed; } set { completed = value; } }
+    public bool Completed { get { return completed; } private set { completed = value; } }
+
+    public void Complete()
+    {
+        completed = true;
+        selected = false;
+        GetComponentInChildren<ElementExpandFade>().Play(1.6f, 2.5f);
+    }
 
     public void SetCardHandler(CardHandler cardHandler)
     {

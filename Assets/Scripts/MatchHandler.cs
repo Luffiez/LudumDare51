@@ -40,10 +40,8 @@ public class MatchHandler : MonoBehaviour
             card2.GetComponent<InteractableCardUI>().FlipCard();
             if (card1.PairId == card2.PairId)
             {
-                card1.Completed = true;
-                card1.Selected = false;
-                card2.Completed = true;
-                card2.Selected = false;
+                card1.Complete();
+                card2.Complete();
                 card1 = null;
                 card2 = null;
                 clearCards = false;

@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOfPairs: 7
-  endScreenTime: 2
+  endScreenTime: 1
   cardSpawner: {fileID: 8847379781641387940}
   CardSprites:
   - {fileID: -21699982, guid: b42cfb9f74c1c884192679f09fca7c12, type: 3}

@@ -8,9 +8,12 @@ namespace LDJAM51.UI
     public class InteractableCardUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         [Header("Hover Settings")]
-        [SerializeField] ElementScaler scaler;
         [SerializeField] float hoverScale = 1.1f;
         [SerializeField] float hoverSpeed = 5f;
+
+        [Header("Bounce Settings")]
+        [SerializeField] float bounceHeight = 5f;
+        [SerializeField] float bounceSpeed = 1f;
 
         [Header("Flip Settings")]
         [SerializeField] float flipSpeed;
@@ -18,18 +21,20 @@ namespace LDJAM51.UI
         [SerializeField] Image iconImage;
         [SerializeField] Image backgroundImage;
 
+        ElementScaler scaler;
+        ElementBouncer bouncer;
         Transform element;
         bool isFlipping = false;
         bool isFacingUp = false;
 
         public bool IsFacingUp { get { return isFacingUp; } }
-        CardBehaviourScript cardBehaviourScript;
+        
         private void Start()
         {
             element = transform.GetChild(0);
-            cardBehaviourScript = GetComponent<CardBehaviourScript>();
+            scaler = element.GetComponentInChildren<ElementScaler>();
+            bouncer = element.GetComponentInChildren<ElementBouncer>();
         }
-
 
         public void OnPointerEnter(PointerEventData eventData)
         {
@@ -58,7 +63,8 @@ namespace LDJAM51.UI
                 return;
 
             scaler.StopAllCoroutines();
-
+            bouncer.StopBounce();
+            bouncer.StartBounce(bounceHeight, bounceSpeed);
             if (!isFacingUp)
                 StartCoroutine(FlipUp());
             else
