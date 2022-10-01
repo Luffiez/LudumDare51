@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class MatchHandler : MonoBehaviour
 {
-    CardBehaviour card1;
+    CardBehaviourScript card1;
 
     // Update is called once per frame
-    public void AddCard(CardBehaviour cardState)
+    public void AddCard(CardBehaviourScript cardState)
     {
         
         if (cardState == null)
@@ -23,7 +23,7 @@ public class MatchHandler : MonoBehaviour
         }
         else
         {
-            CardBehaviour card2 = cardState;
+            CardBehaviourScript card2 = cardState;
             card2.Selected = true;
             if (card1.PairId == card2.PairId)
             {
