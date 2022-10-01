@@ -7,6 +7,7 @@ public class EffectHandler : MonoBehaviour
     // Start is called before the first frame update
 
     public List<Effect> Effects;
+    [SerializeField]
     float effectTime = 10f;
     float effectTimer;
     void Start()
@@ -19,6 +20,7 @@ public class EffectHandler : MonoBehaviour
     {
         if (effectTimer < Time.time)
         {
+            effectTimer = Time.time + effectTime;
             int randomIndex = Random.Range(0, Effects.Count);
             Effects[randomIndex].StartEffect();
         }
