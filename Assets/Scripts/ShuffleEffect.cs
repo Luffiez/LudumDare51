@@ -4,20 +4,24 @@ using UnityEngine;
 
 public class ShuffleEffect : Effect
 {
+    [SerializeField]
+    CardHandler cardHandler;
+    List<GameObject>cardObjects = new List<GameObject> ();
+    [SerializeField]
+    int NumberOfCards;
     public override void StartEffect()
     {
-        Debug.Log("test");
+        for (int i = 0; i < NumberOfCards; i++)
+        {
+            
+        }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("test2");
+        cardObjects = cardHandler.CardObjects;
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        Debug.Log("test3");
-    }
 }
