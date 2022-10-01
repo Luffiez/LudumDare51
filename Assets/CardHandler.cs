@@ -9,6 +9,10 @@ public class CardHandler : MonoBehaviour
     int numberOfPairs;
     int completedPairs = 0;
     [SerializeField]
+    float endScreenTime =2f;
+    float endScreenTimer;
+
+    [SerializeField]
     CardSpawner cardSpawner;
     List<GameObject> cards = new List<GameObject>();
     [SerializeField]
@@ -16,6 +20,8 @@ public class CardHandler : MonoBehaviour
     [SerializeField]
     MatchHandler matchHandler;
     List<GameObject> cardObjects = new List<GameObject>();
+    bool gameCompleted = false;
+
     public List<GameObject> CardObjects { get { return cardObjects; } } 
          
     // Start is called before the first frame update
@@ -30,6 +36,23 @@ public class CardHandler : MonoBehaviour
         if (match)
         {
             completedPairs++;
+            if (completedPairs >= numberOfPairs)
+            {
+                gameCompleted=true;
+                endScreenTimer = endScreenTime + Time.time;
+            }
         }
     }
+
+    public void Update()
+    {
+        if (gameCompleted)
+        {
+            if(endScreenTimer < Time.time)
+            {
+                Debug.Log("you win");
+            }
+        }
+    }
+
 }
