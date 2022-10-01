@@ -88,10 +88,10 @@ namespace LDJAM51.UI
                     backgroundImage.enabled = false;
                     iconImage.enabled = true;
                     isFacingUp = true;
+                    iconImage.transform.localScale = new Vector3(1, 1, 1);
 
                     yield return new WaitForSeconds(0.05f);
 
-                    //iconImage.transform.localScale = new Vector3(1, -1, 1);
                     //backgroundImage.transform.localScale = new Vector3(1, -1, 1);
                 }
 
