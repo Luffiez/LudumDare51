@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace LDJAM51.UI
 {
-    public class InteractableCardUI : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
+    public class InteractableCardUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         [Header("Hover Settings")]
         [SerializeField] ElementScaler scaler;
@@ -22,15 +22,14 @@ namespace LDJAM51.UI
         bool isFlipping = false;
         bool isFacingUp = false;
 
+        public bool IsFacingUp { get { return isFacingUp; } }
+        CardBehaviourScript cardBehaviourScript;
         private void Start()
         {
             element = transform.GetChild(0);
+            cardBehaviourScript = GetComponent<CardBehaviourScript>();
         }
 
-        public void OnPointerDown(PointerEventData eventData)
-        {
-            FlipCard();
-        }
 
         public void OnPointerEnter(PointerEventData eventData)
         {
