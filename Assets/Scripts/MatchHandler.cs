@@ -75,7 +75,7 @@ public class MatchHandler : MonoBehaviour
             }
             else
             {
-                if (!card1.GetComponent<InteractableCardUI>().IsFacingUp && !card2.GetComponent<InteractableCardUI>().IsFacingUp)
+                if (!card1.GetComponent<InteractableCardUI>().IsFacingUp && !card1.GetComponent<InteractableCardUI>().IsFlipping && !card2.GetComponent<InteractableCardUI>().IsFacingUp && !card2.GetComponent<InteractableCardUI>().IsFlipping)
                 {
                     card1 = null;
                     card2 = null;
