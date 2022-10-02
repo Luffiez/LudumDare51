@@ -6,7 +6,7 @@ public class ShuffleEffect : Effect
 {
     [SerializeField]
     CardHandler cardHandler;
-    List<GameObject>cardObjects = new List<GameObject> ();
+    List<GameObject> cardObjects = new List<GameObject>();
     [SerializeField]
     int NumberOfCards;
     [SerializeField]
@@ -18,7 +18,7 @@ public class ShuffleEffect : Effect
     List<Vector3> activeCardsStartPositions = new List<Vector3>();
     List<Transform> parentList = new List<Transform>();
     bool lerpBack;
-    bool doingEffect =false;
+    bool doingEffect = false;
     public override void StartEffect()
     {
         if (doingEffect)
@@ -49,6 +49,7 @@ public class ShuffleEffect : Effect
             parentList.Add(activeCardsTemps[randomIndex].transform.parent);
             activeCardsTemps.RemoveAt(randomIndex);
         }
+        SoundManager.instance.PlaySfx("Shuffle");
         LerpTimer = 0;
         doingEffect = true;
     }
@@ -91,6 +92,8 @@ public class ShuffleEffect : Effect
             {
                 if (lerpBack == false)
                 {
+                    SoundManager.instance.PlaySfx("Shuffle");
+
                     int listLength = activeCards.Count;
                     List<GameObject> cardClones = new List<GameObject>(activeCards);
                     List<Transform> parentClones = new List<Transform>(parentList);

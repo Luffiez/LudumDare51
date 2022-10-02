@@ -13,10 +13,6 @@ public class MatchHandler : MonoBehaviour
     bool clearCards = false;
     bool flipCards = false;
 
-    [SerializeField] AudioClip addClip;
-    [SerializeField] AudioClip matchClip;
-    [SerializeField] AudioClip wrongClip;
-
     // Update is called once per frame
     public bool AddCard(CardBehaviourScript cardState)
     {
@@ -31,7 +27,7 @@ public class MatchHandler : MonoBehaviour
             card1 = cardState;
             card1.GetComponent<InteractableCardUI>().FlipCard();
             card1.Selected=true;
-            SoundManager.instance.PlaySfx(addClip, 0.7f);
+            SoundManager.instance.PlaySfx("Add", 0.7f);
         }
         else
         {
@@ -45,14 +41,14 @@ public class MatchHandler : MonoBehaviour
                 card1 = null;
                 card2 = null;
                 clearCards = false;
-                SoundManager.instance.PlaySfx(matchClip, 0.7f);
+                SoundManager.instance.PlaySfx("Match", 0.7f);
                 return true;
             }
             else
             {
                 clearCards = true;
                 clearTimer = Time.time + clearTime;
-                SoundManager.instance.PlaySfx(wrongClip, 0.7f);
+                SoundManager.instance.PlaySfx("Wrong", 0.7f);
                 flipCards = false;
             }
         }
