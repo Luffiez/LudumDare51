@@ -364,6 +364,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 400919613791064521, guid: e064a0053f2dbf442b4f0ba27b55879d, type: 3}
+      propertyPath: m_StartCorner
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400919613791064521, guid: e064a0053f2dbf442b4f0ba27b55879d, type: 3}
+      propertyPath: m_ChildAlignment
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 400919613791064522, guid: e064a0053f2dbf442b4f0ba27b55879d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 400919613791064522, guid: e064a0053f2dbf442b4f0ba27b55879d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 400919613791064522, guid: e064a0053f2dbf442b4f0ba27b55879d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400919613791064522, guid: e064a0053f2dbf442b4f0ba27b55879d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e064a0053f2dbf442b4f0ba27b55879d, type: 3}
 --- !u!114 &1889388184 stripped
@@ -449,5 +473,9 @@ PrefabInstance:
       propertyPath: winScreen
       value: 
       objectReference: {fileID: 1889388184}
+    - target: {fileID: 8847379781641387943, guid: c88726ea45a67774cb8262af094324cf, type: 3}
+      propertyPath: numberOfPairs
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c88726ea45a67774cb8262af094324cf, type: 3}

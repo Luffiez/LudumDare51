@@ -304,7 +304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sfx: {fileID: 1231486632943669381}
   bgm: {fileID: 1231486631910878249}
-  startClip: {fileID: 0}
+  startClip: {fileID: 8300000, guid: b8430b037032fa1449576dcfec8a385f, type: 3}
   soundEffects:
   - {fileID: 8300000, guid: ce8130bbfe9d90b4686a536977255cfe, type: 3}
   - {fileID: 8300000, guid: 5f0a874f2bc072544b597a1f8a5f0aa3, type: 3}
