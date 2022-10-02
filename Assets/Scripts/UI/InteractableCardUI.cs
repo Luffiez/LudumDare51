@@ -29,7 +29,6 @@ namespace LDJAM51.UI
 
         public bool IsFacingUp { get { return isFacingUp; } }
         public bool IsFlipping { get { return isFlipping; } }
-        CardBehaviourScript cardBehaviourScript;
 
         private void Start()
         {
@@ -59,6 +58,11 @@ namespace LDJAM51.UI
             iconImage.sprite = sprite;
         }
 
+        public Sprite GetSprite()
+        {
+            return iconImage.sprite;
+        }
+
         public void FlipCard()
         {
             if (isFlipping)
@@ -70,10 +74,7 @@ namespace LDJAM51.UI
             if (!isFacingUp)
                 StartCoroutine(FlipUp());
             else
-            {
-                // TODO: Remove self from match check
                 StartCoroutine(FlipDown());
-            }
         }
 
         IEnumerator FlipUp()
@@ -81,9 +82,6 @@ namespace LDJAM51.UI
             isFlipping = true;
             float currentX = element.localRotation.x;
             float targetX = 180;
-            float newScale = hoverScale * 1.1f;
-
-            //scaler.SetTargetScale(newScale, hoverSpeed * hoverMultiplier);
 
             while (currentX + 1 <= targetX)
             {
@@ -99,8 +97,6 @@ namespace LDJAM51.UI
                     isFacingUp = true;
 
                     yield return new WaitForSeconds(0.05f);
-
-                    //backgroundImage.transform.localScale = new Vector3(1, -1, 1);
                 }
 
                 yield return new WaitForEndOfFrame();
@@ -112,10 +108,6 @@ namespace LDJAM51.UI
             element.localScale = new Vector3(element.localScale.x, -element.localScale.y, element.localScale.z);
 
             isFlipping = false;
-            //scaler.StopAllCoroutines();
-            //scaler.SetTargetScale(hoverScale, hoverSpeed * hoverMultiplier);
-
-            // TODO: add self to match check
         }
 
         IEnumerator FlipDown()

@@ -65,7 +65,6 @@ public class ShuffleEffectAtCardPosition : Effect
         SoundManager.instance.PlaySfx("Shuffle");
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         cardHandler = GetComponent<CardHandler>();
@@ -86,28 +85,21 @@ public class ShuffleEffectAtCardPosition : Effect
             LerpTimer += Time.deltaTime;
             if (LerpTimer < LerpTime)
             {
-                    for (int i = 0; i < activeCards.Count; i++)
-                    {
-                        Vector3 NewCardPosition = Vector3.Lerp(StartPositions[i], activeCards[i].transform.parent.GetComponent<RectTransform>().position, LerpTimer / LerpTime);
-                        activeCards[i].GetComponent<RectTransform>().position = NewCardPosition;
+                for (int i = 0; i < activeCards.Count; i++)
+                {
+                    Vector3 NewCardPosition = Vector3.Lerp(StartPositions[i], activeCards[i].transform.parent.GetComponent<RectTransform>().position, LerpTimer / LerpTime);
+                    activeCards[i].GetComponent<RectTransform>().position = NewCardPosition;
 
-                    }
-                
-                
+                }
             }
             else
             {
-             
-                
-                    for (int i = 0; i < activeCards.Count; i++)
-                    {
-                        activeCards[i].GetComponent<RectTransform>().localPosition = Vector3.zero;
-                        activeCards[i].GetComponent<CardBehaviourScript>().Selected = false;
-                    }
-                    doingEffect = false;
-                 
-
-
+                for (int i = 0; i < activeCards.Count; i++)
+                {
+                    activeCards[i].GetComponent<RectTransform>().localPosition = Vector3.zero;
+                    activeCards[i].GetComponent<CardBehaviourScript>().Selected = false;
+                }
+                doingEffect = false;
             }
         }
     }

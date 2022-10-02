@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using LDJAM51.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
 public class CardBehaviourScript : MonoBehaviour, IPointerDownHandler
@@ -11,6 +10,13 @@ public class CardBehaviourScript : MonoBehaviour, IPointerDownHandler
     public bool Selected { get { return selected; } set { selected = value; } }
     public int PairId { get { return pairId; } set { pairId = value; } }
     public bool Completed { get { return completed; } private set { completed = value; } }
+
+    public InteractableCardUI UI { get; private set; }
+
+    void Start()
+    {
+        UI = GetComponent<InteractableCardUI>();
+    }
 
     public void Complete()
     {

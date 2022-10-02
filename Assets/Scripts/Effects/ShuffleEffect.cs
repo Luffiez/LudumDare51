@@ -3,17 +3,18 @@ using UnityEngine;
 
 public class ShuffleEffect : Effect
 {
+    [SerializeField] int NumberOfCards;
+    [SerializeField] float LerpTime;
+    
     CardHandler cardHandler;
-    List<GameObject> cardObjects = new List<GameObject>();
-    [SerializeField]
-    int NumberOfCards;
     Transform OffScreenTransform;
-    [SerializeField]
-    float LerpTime;
-    float LerpTimer;
+
+    List<GameObject> cardObjects = new List<GameObject>();
     List<GameObject> activeCards = new List<GameObject>();
     List<Vector3> activeCardsStartPositions = new List<Vector3>();
     List<Transform> parentList = new List<Transform>();
+
+    float LerpTimer;
     bool lerpBack;
     bool doingEffect = false;
     public override void StartEffect()
@@ -46,9 +47,10 @@ public class ShuffleEffect : Effect
             parentList.Add(activeCardsTemps[randomIndex].transform.parent);
             activeCardsTemps.RemoveAt(randomIndex);
         }
-        SoundManager.instance.PlaySfx("Shuffle");
         LerpTimer = 0;
         doingEffect = true;
+
+        SoundManager.instance.PlaySfx("Shuffle");
     }
 
     // Start is called before the first frame update

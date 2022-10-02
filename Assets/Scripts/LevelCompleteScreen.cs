@@ -18,6 +18,8 @@ public class LevelCompleteScreen : MonoBehaviour
 
     internal void Show(int flips)
     {
+        FindObjectOfType<EffectHandler>().enabled = false;
+       
         scaler.SetTargetScale(1, 5);
         SoundManager.instance.PlaySfx("Win");
         var diff = DateTime.Now - startTime;
