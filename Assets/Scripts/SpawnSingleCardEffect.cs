@@ -13,8 +13,15 @@ public class SpawnSingleCardEffect : Effect
     float lerpTimer =0;
     Vector3 startPosition;
     Vector3 parentPosition;
-    public override void StartEffect()
+    [SerializeField]
+    int numberOfSpawns = 4;
+    public override bool StartEffect()
     {
+        
+        if (numberOfSpawns == 0)
+        {
+            return false;
+        }
         if (cardHandler.AddSingleCard(out GameObject card))
         {
             newCard = card;
@@ -24,6 +31,9 @@ public class SpawnSingleCardEffect : Effect
             card.GetComponent<CardBehaviourScript>().Selected = true;
             lerpTimer = 0;
         }
+        numberOfSpawns--;
+
+        return true;
     }
 
     private void Update()

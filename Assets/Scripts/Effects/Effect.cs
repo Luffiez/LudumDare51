@@ -2,5 +2,5 @@ using UnityEngine;
 
 public abstract class Effect : MonoBehaviour
 {
-    public abstract void StartEffect();
+    public abstract bool StartEffect();
 }

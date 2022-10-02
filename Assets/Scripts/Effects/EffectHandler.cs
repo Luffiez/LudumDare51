@@ -25,7 +25,11 @@ public class EffectHandler : MonoBehaviour
                 return;
             effectTimer = Time.time + effectTime;
             int randomIndex = Random.Range(0, Effects.Count);
-            Effects[randomIndex].StartEffect();
+            bool keep= Effects[randomIndex].StartEffect();
+            if (keep == false)
+            {
+                Effects.RemoveAt(randomIndex);
+            }
         }
     }
 }

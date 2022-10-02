@@ -17,10 +17,10 @@ public class ShuffleEffect : Effect
     float LerpTimer;
     bool lerpBack;
     bool doingEffect = false;
-    public override void StartEffect()
+    public override bool StartEffect()
     {
         if (doingEffect)
-            return;
+            return true;
         List<GameObject> activeCardsTemps = new List<GameObject>();
         activeCards = new List<GameObject>();
         activeCardsStartPositions = new List<Vector3>();
@@ -51,6 +51,7 @@ public class ShuffleEffect : Effect
         doingEffect = true;
 
         SoundManager.instance.PlaySfx("Shuffle");
+        return true;
     }
 
     // Start is called before the first frame update

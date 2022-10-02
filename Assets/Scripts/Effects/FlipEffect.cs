@@ -20,10 +20,10 @@ public class FlipEffect : Effect
     float lerpTimer = 0;
     Vector3 targetScale;
     Vector3 startScale;
-    public override void StartEffect()
+    public override bool StartEffect()
     {
         if (effectInAction)
-            return;
+            return true;
         startScale = BoardObject.transform.localScale;
         if (FlipDir==FlipDirection.X)
         {
@@ -35,6 +35,7 @@ public class FlipEffect : Effect
         }
         effectInAction = true;
         lerpTimer = 0;
+        return true;
     }
 
     // Start is called before the first frame update

@@ -16,10 +16,10 @@ public class ShuffleEffectAtCardPosition : Effect
     List<Transform> parentList = new List<Transform>();
     List<Vector3> StartPositions = new List<Vector3>();
     bool doingEffect = false;
-    public override void StartEffect()
+    public override bool StartEffect()
     {
         if (doingEffect)
-            return;
+            return true;
         List<GameObject> activeCardsTemps = new List<GameObject>();
         activeCards = new List<GameObject>();
         activeCardsStartPositions = new List<Vector3>();
@@ -58,11 +58,17 @@ public class ShuffleEffectAtCardPosition : Effect
         {
             int randomParent = Random.Range(0, parentClones.Count);
             int randomCardIndex = Random.Range(0, cardClones.Count);
+            if (cardClones[randomCardIndex].transform.parent == parentClones[randomParent])
+            {
+                randomCardIndex++;
+                randomCardIndex = randomCardIndex % cardClones.Count;
+            }
             cardClones[randomCardIndex].transform.parent = parentClones[randomParent];
             parentClones.RemoveAt(randomParent);
             cardClones.RemoveAt(randomCardIndex);
         }
         SoundManager.instance.PlaySfx("Shuffle");
+        return true;
     }
 
     void Start()

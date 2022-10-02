@@ -11,7 +11,7 @@ public class InvisibleSwapEffect : Effect
         cardHandler = GetComponent<CardHandler>();
     }
 
-    public override void StartEffect()
+    public override bool StartEffect()
     {
         var availableCards = GetAvailableCards();
         var selectedCards = GetRandomCards(availableCards);
@@ -19,6 +19,7 @@ public class InvisibleSwapEffect : Effect
         SwapParents(selectedCards);
 
         SoundManager.instance.PlaySfx("Shuffle");
+        return true;
     }
 
     private static void SwapParents(List<GameObject> selectedCards)

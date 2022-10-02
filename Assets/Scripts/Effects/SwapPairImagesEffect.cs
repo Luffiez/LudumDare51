@@ -11,7 +11,7 @@ public class SwapPairImagesEffect : Effect
         cardHandler = GetComponent<CardHandler>();
     }
 
-    public override void StartEffect()
+    public override bool StartEffect()
     {
         var availableCards = GetAvailableCards();
         var selectedCards = GetRandomCards(availableCards);
@@ -21,6 +21,7 @@ public class SwapPairImagesEffect : Effect
         SwapPairImages(cardPairs);
 
         SoundManager.instance.PlaySfx("Shuffle");
+        return true;
     }
 
     private void SwapPairImages(List<CardPair> cardPairs)
