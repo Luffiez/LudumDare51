@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CardHandler : MonoBehaviour
@@ -20,7 +21,10 @@ public class CardHandler : MonoBehaviour
     [SerializeField]
     MatchHandler matchHandler;
     bool gameCompleted = false;
-    [SerializeField] AudioClip winClip;
+    [SerializeField] LevelCompleteScreen winScreen;
+   
+
+    int flips = 0;
 
     public List<GameObject> CardObjects { get { return cards; } }
 
@@ -43,6 +47,7 @@ public class CardHandler : MonoBehaviour
     public void AddToMatch(CardBehaviourScript cardBehaviourScript)
     {
         bool match = matchHandler.AddCard(cardBehaviourScript);
+        flips++;
         if (match)
         {
             completedPairs++;
@@ -60,9 +65,8 @@ public class CardHandler : MonoBehaviour
         {
             if(endScreenTimer < Time.time)
             {
-                Debug.Log("you win");
-                SoundManager.instance.PlaySfx(winClip);
-                gameCompleted = false;
+                winScreen.Show(flips);
+                enabled = false;
             }
         }
     }

@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOfPairs: 7
-  endScreenTime: 2
+  endScreenTime: 1
   cardSpawner: {fileID: 8847379781641387940}
   CardSprites:
   - {fileID: -21699982, guid: b42cfb9f74c1c884192679f09fca7c12, type: 3}
@@ -138,7 +138,7 @@ MonoBehaviour:
   - {fileID: -2134198001, guid: b42cfb9f74c1c884192679f09fca7c12, type: 3}
   - {fileID: -1701946051, guid: b42cfb9f74c1c884192679f09fca7c12, type: 3}
   matchHandler: {fileID: 8847379781641387961}
-  winClip: {fileID: 8300000, guid: c547f2440c1623347b254454b09004f8, type: 3}
+  winScreen: {fileID: 0}
 --- !u!114 &8847379781641387940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b7aae699b70efd47a670b95f2f7872a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clearTime: 1
+  clearTime: 0.75
   addClip: {fileID: 8300000, guid: ce8130bbfe9d90b4686a536977255cfe, type: 3}
   matchClip: {fileID: 8300000, guid: 5f0a874f2bc072544b597a1f8a5f0aa3, type: 3}
   wrongClip: {fileID: 8300000, guid: e217b956cdea5ae48a1ba332cf53b4a8, type: 3}
