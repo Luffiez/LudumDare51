@@ -20,6 +20,8 @@ public class EffectHandler : MonoBehaviour
     {
         if (effectTimer < Time.time)
         {
+            if (Effects.Count <= 0)
+                return;
             effectTimer = Time.time + effectTime;
             int randomIndex = Random.Range(0, Effects.Count);
             Effects[randomIndex].StartEffect();
