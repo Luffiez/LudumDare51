@@ -32,7 +32,7 @@ public class CardSpawner : MonoBehaviour
         
             GameObject cardPositionObject = GameObject.Instantiate(UiCardPositionPrefab, GridLayoutObject.transform);
 
-            card1.transform.parent = cardPositionObject.transform;
+            card1.transform.SetParent(cardPositionObject.transform);
             card1.GetComponent<RectTransform>().position=SingleCardSpawnPosition.GetComponent<RectTransform>().position;
             card1.transform.localScale = new Vector3(1, 1, 1);
         pairId++;
@@ -66,7 +66,7 @@ public class CardSpawner : MonoBehaviour
         {
           GameObject cardPositionObject = GameObject.Instantiate(UiCardPositionPrefab, GridLayoutObject.transform);
           int randomListIndex = Random.Range(0, tempCardList.Count);
-          tempCardList[randomListIndex].transform.parent = cardPositionObject.transform;
+          tempCardList[randomListIndex].transform.SetParent(cardPositionObject.transform);
           tempCardList[randomListIndex].GetComponent<RectTransform>().localPosition = Vector3.zero;
           tempCardList[randomListIndex].GetComponent<RectTransform>().localScale = new Vector3(1,1,1);
           tempCardList.RemoveAt(randomListIndex);
