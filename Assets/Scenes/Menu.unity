@@ -911,7 +911,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 5, y: 5}
-  m_SizeDelta: {x: 200, y: 100}
+  m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &976959136
 MonoBehaviour:
@@ -933,7 +933,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ludum Dare #51 Submission
+  m_text: "Ludum Dare #51 \nSubmission, 2022"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e2e015c6b35b25d48b1d74f1d6b2e0b6, type: 2}
   m_sharedMaterial: {fileID: 1006504595672644111, guid: e2e015c6b35b25d48b1d74f1d6b2e0b6, type: 2}
@@ -1854,6 +1854,7 @@ MonoBehaviour:
   sfx: {fileID: 1950919680}
   bgm: {fileID: 986173612}
   startClip: {fileID: 0}
+  soundEffects: []
 --- !u!4 &2080861440
 Transform:
   m_ObjectHideFlags: 0
