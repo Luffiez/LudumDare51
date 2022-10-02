@@ -26,7 +26,7 @@ public class LevelCompleteScreen : MonoBehaviour
         var diff = DateTime.Now - startTime;
         string text = $"Time taken:";
         if (diff.Minutes > 0)
-            text += $"{diff.Minutes} + minues and";
+            text += $"{diff.Minutes} + minutes and";
 
         text += $" {diff.Seconds} seconds";
         text += $"\nFlips performed: {flips}";
