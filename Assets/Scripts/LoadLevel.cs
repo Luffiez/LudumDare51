@@ -16,7 +16,8 @@ public class LoadLevel : MonoBehaviour
     public void LoadNext()
     {
         var next = SceneManager.GetActiveScene().buildIndex + 1;
-        if(SceneManager.sceneCount > next)
+        
+        if(SceneManager.sceneCountInBuildSettings > next)
             SceneManager.LoadScene(next);
     }
 

@@ -9,6 +9,27 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: ee68a7dcf5687034f9fa9de06a5ea0a0
   - enabled: 1
+    path: Assets/Scenes/BoringMemory.unity
+    guid: 2149d19dca1fa5044af02b8ae1186403
+  - enabled: 1
     path: Assets/Scenes/Level1.unity
+    guid: f1bc13ab2f373dd40a0937236b3e0e66
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
     guid: 998657c4bca4d0d4f90dcf7a1f269cb5
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: 9b95bb35417ebb641acbf717d60709c6
+  - enabled: 1
+    path: Assets/Scenes/Level4.unity
+    guid: 1c5596d0ad8b06b42a154c4bfde4e124
+  - enabled: 1
+    path: Assets/Scenes/Level5.unity
+    guid: 8352367a3d1bca248ad8f64b39a7e178
+  - enabled: 1
+    path: Assets/Scenes/Level6.unity
+    guid: e6fa7f06710f6164b999fe24e0f9c11b
+  - enabled: 1
+    path: Assets/Scenes/Level7.unity
+    guid: 030d73fd32fe02849952c22ab1840ac1
   m_configObjects: {}
