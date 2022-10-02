@@ -161,7 +161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardHandler: {fileID: 658974264}
   lerpTime: 1
-  numberOfSpawns: 3
+  numberOfSpawns: 4
 --- !u!114 &658974264 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8847379781641387943, guid: c88726ea45a67774cb8262af094324cf, type: 3}
