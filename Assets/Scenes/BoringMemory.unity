@@ -128,66 +128,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 400919613791064520, guid: e064a0053f2dbf442b4f0ba27b55879d, type: 3}
   m_PrefabInstance: {fileID: 1889388183}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &658974258 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8847379781641387941, guid: c88726ea45a67774cb8262af094324cf, type: 3}
-  m_PrefabInstance: {fileID: 2019819585}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &658974259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 658974258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69991ea70dc95184991d4271952ca166, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NumberOfCards: 2
-  LerpTime: 0.5
---- !u!114 &658974260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 658974258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ab3f14930dea8948a7eac37c68b0fa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardHandler: {fileID: 658974264}
-  lerpTime: 1
-  numberOfSpawns: 4
---- !u!114 &658974264 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8847379781641387943, guid: c88726ea45a67774cb8262af094324cf, type: 3}
-  m_PrefabInstance: {fileID: 2019819585}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 658974258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 000c05a276d4ee448bb7c29736a3f597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &658974265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 658974258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 176bd9fe9db84514c924c96750990607, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BoardObject: {fileID: 1486627904}
-  lerptime: 1
-  FlipDir: 0
 --- !u!1 &855435453
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,11 +212,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1486627904 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8524554723761476854, guid: e064a0053f2dbf442b4f0ba27b55879d, type: 3}
-  m_PrefabInstance: {fileID: 1889388183}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1643848957 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 25361824, guid: e064a0053f2dbf442b4f0ba27b55879d, type: 3}
@@ -537,7 +472,7 @@ PrefabInstance:
       objectReference: {fileID: 1889388184}
     - target: {fileID: 8847379781641387943, guid: c88726ea45a67774cb8262af094324cf, type: 3}
       propertyPath: numberOfPairs
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c88726ea45a67774cb8262af094324cf, type: 3}
