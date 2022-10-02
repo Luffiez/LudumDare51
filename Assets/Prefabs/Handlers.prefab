@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8847379781641387943}
   - component: {fileID: 8847379781641387940}
   - component: {fileID: 8847379781641387961}
+  - component: {fileID: 5967966472987871820}
   m_Layer: 0
   m_Name: Handlers
   m_TagString: Untagged
@@ -153,8 +154,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardObjectPrefab: {fileID: 8377523696500426564, guid: 3e83ae4fb3fe8dc4daf33ecc4eb9223b, type: 3}
   GridLayoutObject: {fileID: 0}
-  UiCardPositionPrefab: {fileID: 0}
+  UiCardPositionPrefab: {fileID: 6845471000531570355, guid: 8a23340787f84d54aa01adbc82f6f40e, type: 3}
   canvas: {fileID: 0}
+  SingleCardSpawnPosition: {fileID: 0}
 --- !u!114 &8847379781641387961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,6 +170,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clearTime: 0.75
-  addClip: {fileID: 8300000, guid: ce8130bbfe9d90b4686a536977255cfe, type: 3}
-  matchClip: {fileID: 8300000, guid: 5f0a874f2bc072544b597a1f8a5f0aa3, type: 3}
-  wrongClip: {fileID: 8300000, guid: e217b956cdea5ae48a1ba332cf53b4a8, type: 3}
+--- !u!114 &5967966472987871820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8847379781641387941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d1aeb6e66f64d4abfcf39ef4fcc12c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectTime: 10

@@ -1,15 +1,12 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ShuffleEffect : Effect
 {
-    [SerializeField]
     CardHandler cardHandler;
     List<GameObject> cardObjects = new List<GameObject>();
     [SerializeField]
     int NumberOfCards;
-    [SerializeField]
     Transform OffScreenTransform;
     [SerializeField]
     float LerpTime;
@@ -57,7 +54,14 @@ public class ShuffleEffect : Effect
     // Start is called before the first frame update
     void Start()
     {
+        cardHandler = GetComponent<CardHandler>();
+        OffScreenTransform = GameObject.Find("OffScreenTransform").transform;
         cardObjects = cardHandler.CardObjects;
+
+        if (OffScreenTransform == null)
+        {
+            throw new System.Exception($"{typeof(ShuffleEffect)} requires a Scene Object with the name 'OffScreenTransform'"!);
+        }
     }
 
     // Update is called once per frame

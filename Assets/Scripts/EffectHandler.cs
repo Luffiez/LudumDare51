@@ -6,12 +6,13 @@ public class EffectHandler : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public List<Effect> Effects;
+    List<Effect> Effects;
     [SerializeField]
     float effectTime = 10f;
     float effectTimer;
     void Start()
     {
+        Effects.AddRange(GetComponents<Effect>());
         effectTimer = Time.time + effectTime;   
     }
 
