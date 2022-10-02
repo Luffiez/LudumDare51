@@ -15,26 +15,51 @@ public class CardSpawner : MonoBehaviour
     GameObject UiCardPositionPrefab;
     [SerializeField]
     GameObject canvas;
-   
+    [SerializeField]
+    Transform SingleCardSpawnPosition;
+    int pairId = 0;
+
+    public GameObject SpawnSingleCard(List<Sprite> cardSprites, CardHandler cardHandler)
+    {
+            int randomListIndex = Random.Range(0, cardSprites.Count);
+            GameObject card1 = Instantiate(CardObjectPrefab, null);
+            card1.GetComponent<CardBehaviourScript>().PairId = pairId;
+           
+            card1.GetComponent<CardBehaviourScript>().SetCardHandler(cardHandler);
+            card1.GetComponent<InteractableCardUI>().SetSprite(cardSprites[randomListIndex]);
+            cardSprites.RemoveAt(randomListIndex);
+        
+        
+            GameObject cardPositionObject = GameObject.Instantiate(UiCardPositionPrefab, GridLayoutObject.transform);
+
+            card1.transform.parent = cardPositionObject.transform;
+            card1.GetComponent<RectTransform>().position=SingleCardSpawnPosition.GetComponent<RectTransform>().position;
+            card1.transform.localScale = new Vector3(1, 1, 1);
+        pairId++;
+        LayoutRebuilder.ForceRebuildLayoutImmediate(canvas.GetComponent<RectTransform>());
+        return card1;
+    }
 
     public List<GameObject> SpawnCards(int numberOfPairs, List<Sprite> cardSprites, CardHandler cardHandler)
     {
-        List<Sprite> cardSpriteClone = new List<Sprite>(cardSprites);
+        
         List<GameObject> cardObjects = new List<GameObject>();
         for (int i = 0; i < numberOfPairs; i++)
         {
-            int randomListIndex = Random.Range(0, cardSpriteClone.Count);
+            
+            int randomListIndex = Random.Range(0, cardSprites.Count);
             GameObject card1 =   Instantiate(CardObjectPrefab, null);
             GameObject card2 = Instantiate(CardObjectPrefab, null);
             cardObjects.Add(card2);
             cardObjects.Add(card1);
-            card1.GetComponent<CardBehaviourScript>().PairId = i;
-            card2.GetComponent<CardBehaviourScript>().PairId = i;
+            card1.GetComponent<CardBehaviourScript>().PairId = pairId;
+            card2.GetComponent<CardBehaviourScript>().PairId = pairId;
             card2.GetComponent<CardBehaviourScript>().SetCardHandler(cardHandler);
             card1.GetComponent<CardBehaviourScript>().SetCardHandler(cardHandler);
-            card1.GetComponent<InteractableCardUI>().SetSprite(cardSpriteClone[randomListIndex]);
-            card2.GetComponent<InteractableCardUI>().SetSprite(cardSpriteClone[randomListIndex]);
-            cardSpriteClone.RemoveAt(randomListIndex);
+            card1.GetComponent<InteractableCardUI>().SetSprite(cardSprites[randomListIndex]);
+            card2.GetComponent<InteractableCardUI>().SetSprite(cardSprites[randomListIndex]);
+            cardSprites.RemoveAt(randomListIndex);
+            pairId++;
         }
         List<GameObject>tempCardList = new List<GameObject>(cardObjects);
         for (int i = 0; i < numberOfPairs * 2; i++)

@@ -30,6 +30,16 @@ public class CardHandler : MonoBehaviour
         cards = cardSpawner.SpawnCards(numberOfPairs, CardSprites, this);
     }
 
+    public bool AddSingleCard(out GameObject card)
+    {
+        card = null;
+        if (CardSprites.Count <= 0)
+            return false;
+        card = cardSpawner.SpawnSingleCard(CardSprites, this);
+        CardObjects.Add(card);
+        return true;
+    }
+
     public void AddToMatch(CardBehaviourScript cardBehaviourScript)
     {
         bool match = matchHandler.AddCard(cardBehaviourScript);
