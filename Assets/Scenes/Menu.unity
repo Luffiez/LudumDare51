@@ -1569,10 +1569,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1231486633081049210, guid: 54e30bc6527a0624d928fe3e56282ffe, type: 3}
-      propertyPath: startClip
-      value: 
-      objectReference: {fileID: 8300000, guid: b8430b037032fa1449576dcfec8a385f, type: 3}
     - target: {fileID: 1231486633081049211, guid: 54e30bc6527a0624d928fe3e56282ffe, type: 3}
       propertyPath: m_Name
       value: SoundManager

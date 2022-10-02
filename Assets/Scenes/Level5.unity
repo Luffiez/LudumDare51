@@ -434,7 +434,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5967966472987871820, guid: c88726ea45a67774cb8262af094324cf, type: 3}
       propertyPath: effectTime
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8847379781641387940, guid: c88726ea45a67774cb8262af094324cf, type: 3}
       propertyPath: canvas
@@ -503,6 +503,10 @@ PrefabInstance:
     - target: {fileID: 8847379781641387943, guid: c88726ea45a67774cb8262af094324cf, type: 3}
       propertyPath: numberOfPairs
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8847379781641387961, guid: c88726ea45a67774cb8262af094324cf, type: 3}
+      propertyPath: clearTime
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c88726ea45a67774cb8262af094324cf, type: 3}

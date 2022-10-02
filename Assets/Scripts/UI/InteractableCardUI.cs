@@ -80,6 +80,7 @@ namespace LDJAM51.UI
 
         IEnumerator FlipUp()
         {
+            StopCoroutine(FlipDown());
             isFlipping = true;
             float currentX = element.localRotation.x;
             float targetX = 180;
@@ -123,7 +124,7 @@ namespace LDJAM51.UI
 
             element.localRotation = Quaternion.Euler(currentX, 0, 0);
 
-            while (currentX - 1 >= targetX)
+            while (currentX - 10 >= targetX)
             {
                 currentX = Mathf.Lerp(currentX, targetX, Time.deltaTime * flipSpeed * 1.5f);
                 element.localRotation = Quaternion.Euler(currentX, 0, 0);
@@ -142,11 +143,9 @@ namespace LDJAM51.UI
             }
 
             cardFront.transform.localScale = new Vector3(1, 1, 1);
-
+            isFlipping = false;
             scaler.SetTargetScale(1, hoverSpeed * hoverMultiplier);
             element.localRotation = Quaternion.Euler(0, 0, 0);
-            scaler.SetTargetScale(1, 5);
-            isFlipping = false;
         }
     }
 }
