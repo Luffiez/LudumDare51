@@ -159,20 +159,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ab3f14930dea8948a7eac37c68b0fa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardHandler: {fileID: 658974264}
   lerpTime: 1
+  sprite: {fileID: 21300000, guid: 07896512a0b62f04f94eb935d0882684, type: 3}
   numberOfSpawns: 4
---- !u!114 &658974264 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8847379781641387943, guid: c88726ea45a67774cb8262af094324cf, type: 3}
-  m_PrefabInstance: {fileID: 2019819585}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 658974258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 000c05a276d4ee448bb7c29736a3f597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &658974265
 MonoBehaviour:
   m_ObjectHideFlags: 0

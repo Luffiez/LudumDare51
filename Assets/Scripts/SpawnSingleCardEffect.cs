@@ -1,10 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnSingleCardEffect : Effect
 {
-    [SerializeField]
     CardHandler cardHandler;
     bool effectActive = false;
     GameObject newCard;
@@ -12,22 +10,24 @@ public class SpawnSingleCardEffect : Effect
     float lerpTime = 1f;
     float lerpTimer =0;
     Vector3 startPosition;
-    Vector3 parentPosition;
+    [SerializeField] Sprite sprite;
     [SerializeField]
     int numberOfSpawns = 4;
+
+    private void Start()
+    {
+        cardHandler = GetComponent<CardHandler>();
+    }
+
     public override bool StartEffect()
     {
-        
-        if (numberOfSpawns == 0)
-        {
-            return false;
-        }
-        if (cardHandler.AddSingleCard(out GameObject card))
+        if(numberOfSpawns<=0)
+        return false;
+        if (cardHandler.AddSingleCard(out GameObject card, new List<Sprite>() { sprite }))
         {
             newCard = card;
             effectActive = true;
             startPosition = newCard.GetComponent<RectTransform>().position;
-            parentPosition = newCard.transform.parent.GetComponent<RectTransform>().position;
             card.GetComponent<CardBehaviourScript>().Selected = true;
             lerpTimer = 0;
         }

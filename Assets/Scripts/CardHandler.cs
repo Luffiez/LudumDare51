@@ -44,6 +44,16 @@ public class CardHandler : MonoBehaviour
         return true;
     }
 
+    public bool AddSingleCard(out GameObject card, List<Sprite> sprite)
+    {
+        card = null;
+        if (sprite.Count <= 0)
+            return false;
+        card = cardSpawner.SpawnSingleCard(sprite, this);
+        CardObjects.Add(card);
+        return true;
+    }
+
     public void AddToMatch(CardBehaviourScript cardBehaviourScript)
     {
         bool match = matchHandler.AddCard(cardBehaviourScript);

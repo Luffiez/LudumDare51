@@ -381,6 +381,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d043f9c221e0344a54cbae0db53a67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &1889388185 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 25361824, guid: e064a0053f2dbf442b4f0ba27b55879d, type: 3}
+  m_PrefabInstance: {fileID: 1889388183}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1902684437 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 400919613765039567, guid: e064a0053f2dbf442b4f0ba27b55879d, type: 3}
@@ -401,6 +406,10 @@ PrefabInstance:
       propertyPath: GridLayoutObject
       value: 
       objectReference: {fileID: 369756620}
+    - target: {fileID: 8847379781641387940, guid: c88726ea45a67774cb8262af094324cf, type: 3}
+      propertyPath: SingleCardSpawnPosition
+      value: 
+      objectReference: {fileID: 1889388185}
     - target: {fileID: 8847379781641387941, guid: c88726ea45a67774cb8262af094324cf, type: 3}
       propertyPath: m_Name
       value: Handlers
