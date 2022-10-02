@@ -438,10 +438,6 @@ PrefabInstance:
       propertyPath: GridLayoutObject
       value: 
       objectReference: {fileID: 369756620}
-    - target: {fileID: 8847379781641387940, guid: c88726ea45a67774cb8262af094324cf, type: 3}
-      propertyPath: UiCardPositionPrefab
-      value: 
-      objectReference: {fileID: 6845471000531570355, guid: 8a23340787f84d54aa01adbc82f6f40e, type: 3}
     - target: {fileID: 8847379781641387941, guid: c88726ea45a67774cb8262af094324cf, type: 3}
       propertyPath: m_Name
       value: Handlers
@@ -496,22 +492,3 @@ PrefabInstance:
       objectReference: {fileID: 1889388184}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c88726ea45a67774cb8262af094324cf, type: 3}
---- !u!1 &2019819586 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8847379781641387941, guid: c88726ea45a67774cb8262af094324cf, type: 3}
-  m_PrefabInstance: {fileID: 2019819585}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2019819588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2019819586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d0455a20d7768b458f114f493abe9d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NumberOfCards: 2
-  LerpTime: 8
