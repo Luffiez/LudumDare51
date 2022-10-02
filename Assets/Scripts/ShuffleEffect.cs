@@ -56,7 +56,7 @@ public class ShuffleEffect : Effect
     // Start is called before the first frame update
     void Start()
     {
-        cardObjects = new List<GameObject>(cardHandler.CardObjects);
+        cardObjects = cardHandler.CardObjects;
     }
 
     // Update is called once per frame
