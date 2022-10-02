@@ -18,8 +18,9 @@ namespace LDJAM51.UI
         [Header("Flip Settings")]
         [SerializeField] float flipSpeed;
         [SerializeField] float hoverMultiplier = 2f;
-        [SerializeField] Image iconImage;
-        [SerializeField] Image backgroundImage;
+        [SerializeField] Image cardIcon;
+        [SerializeField] Image cardFront;
+        [SerializeField] Image cardBack;
 
         ElementScaler scaler;
         ElementBouncer bouncer;
@@ -55,12 +56,12 @@ namespace LDJAM51.UI
 
         public void SetSprite(Sprite sprite)
         {
-            iconImage.sprite = sprite;
+            cardIcon.sprite = sprite;
         }
 
         public Sprite GetSprite()
         {
-            return iconImage.sprite;
+            return cardIcon.sprite;
         }
 
         public void FlipCard()
@@ -91,9 +92,12 @@ namespace LDJAM51.UI
                 if (!isFacingUp && currentX > 90)
                 {
                     element.localScale = new Vector3(element.localScale.x, -element.localScale.y, element.localScale.z);
-                    backgroundImage.enabled = false;
-                    iconImage.enabled = true;
-                    iconImage.transform.localScale = new Vector3(1, 1, 1);
+                    cardFront.enabled = true;
+                    cardIcon.enabled = true;
+
+                    cardBack.enabled = false;
+                    
+                    cardIcon.transform.localScale = new Vector3(1, 1, 1);
                     isFacingUp = true;
 
                     yield return new WaitForSeconds(0.05f);
@@ -103,8 +107,8 @@ namespace LDJAM51.UI
             }
 
             element.localRotation = Quaternion.Euler(0, 0, 0);
-            iconImage.transform.localScale = new Vector3(1, 1, 1);
-            backgroundImage.transform.localScale = new Vector3(1, 1, 1);
+            cardIcon.transform.localScale = new Vector3(1, 1, 1);
+            cardFront.transform.localScale = new Vector3(1, 1, 1);
             element.localScale = new Vector3(element.localScale.x, -element.localScale.y, element.localScale.z);
 
             isFlipping = false;
@@ -115,7 +119,7 @@ namespace LDJAM51.UI
             isFlipping = true;
             float targetX = 0;
             float currentX = 180;
-            iconImage.transform.localScale = new Vector3(1, -1, 1);
+            cardIcon.transform.localScale = new Vector3(1, -1, 1);
 
             element.localRotation = Quaternion.Euler(currentX, 0, 0);
 
@@ -129,14 +133,15 @@ namespace LDJAM51.UI
                     yield return new WaitForSeconds(0.05f);
                     
                     isFacingUp = false;
-                    iconImage.enabled = false;
-                    backgroundImage.enabled = true;
+                    cardIcon.enabled = false;
+                    cardBack.enabled = true;
+                    cardFront.enabled = false;
                 }
 
                 yield return new WaitForEndOfFrame();
             }
 
-            backgroundImage.transform.localScale = new Vector3(1, 1, 1);
+            cardFront.transform.localScale = new Vector3(1, 1, 1);
 
             scaler.SetTargetScale(1, hoverSpeed * hoverMultiplier);
             element.localRotation = Quaternion.Euler(0, 0, 0);

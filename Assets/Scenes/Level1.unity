@@ -123,42 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &25361823
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 25361824}
-  m_Layer: 5
-  m_Name: OffScreenTransform
-  m_TagString: Untagged
-  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &25361824
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 25361823}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1889388185}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 800}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &369756620 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 400919613791064520, guid: e064a0053f2dbf442b4f0ba27b55879d, type: 3}
@@ -413,11 +377,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d043f9c221e0344a54cbae0db53a67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &1889388185 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 400919613765039556, guid: e064a0053f2dbf442b4f0ba27b55879d, type: 3}
-  m_PrefabInstance: {fileID: 1889388183}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1902684437 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 400919613765039567, guid: e064a0053f2dbf442b4f0ba27b55879d, type: 3}
@@ -430,10 +389,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5967966472987871820, guid: c88726ea45a67774cb8262af094324cf, type: 3}
-      propertyPath: effectTime
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 8847379781641387940, guid: c88726ea45a67774cb8262af094324cf, type: 3}
       propertyPath: canvas
       value: 
@@ -494,9 +449,5 @@ PrefabInstance:
       propertyPath: winScreen
       value: 
       objectReference: {fileID: 1889388184}
-    - target: {fileID: 8847379781641387943, guid: c88726ea45a67774cb8262af094324cf, type: 3}
-      propertyPath: numberOfPairs
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c88726ea45a67774cb8262af094324cf, type: 3}

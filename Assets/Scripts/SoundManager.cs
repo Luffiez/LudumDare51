@@ -18,6 +18,8 @@ public class SoundManager : MonoBehaviour
         else
             Destroy(this);
 
+
+        DontDestroyOnLoad(gameObject);
         if(startClip)
             PlayBGM(startClip);
     }

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class LevelCompleteScreen : MonoBehaviour
 {
+    [SerializeField] GameObject window;
     [SerializeField] TMP_Text content;
 
     ElementScaler scaler;
@@ -19,8 +20,8 @@ public class LevelCompleteScreen : MonoBehaviour
     internal void Show(int flips)
     {
         FindObjectOfType<EffectHandler>().enabled = false;
-       
-        scaler.SetTargetScale(1, 5);
+        window.SetActive(true);
+        //scaler.SetTargetScale(1, 5);
         SoundManager.instance.PlaySfx("Win");
         var diff = DateTime.Now - startTime;
         string text = $"Time taken:";

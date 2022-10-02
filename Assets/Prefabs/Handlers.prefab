@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 000c05a276d4ee448bb7c29736a3f597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfPairs: 7
+  numberOfPairs: 3
   endScreenTime: 1
   cardSpawner: {fileID: 8847379781641387940}
   CardSprites:
@@ -116,4 +116,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Effects: []
-  effectTime: 10
+  effectTime: 5
