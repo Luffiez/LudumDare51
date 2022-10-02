@@ -5,7 +5,7 @@ using UnityEngine;
 public class EffectHandler : MonoBehaviour
 {
     // Start is called before the first frame update
-
+    [SerializeField]
     List<Effect> Effects;
     [SerializeField]
     float effectTime = 10f;
